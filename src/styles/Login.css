@@ -1,0 +1,143 @@
+body{
+    background-color: #f4f4f4;
+    margin: 0 auto
+}
+
+.container{
+    position: relative;
+}
+
+.text-color{
+    color: #031b4e;
+}
+
+.input-login{
+    min-width: 250px;
+    border: 1px solid #031b4e;;
+}
+
+.input-login:focus {
+    outline: none;
+}
+
+h2{
+    font-style: italic;
+    font-size: 30px;
+    margin-bottom: 4rem;
+}
+
+/* linea de bajo general */
+.defect:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.title-login{
+    justify-content: center;
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+.login-form{
+    display: grid;
+    border-bottom: 1px solid #ccc;
+}
+
+.login-main{
+    display: flex;
+    width: 350px;
+}
+
+.info-login{
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 2rem 4rem;
+    border-radius: 4px;
+    max-width: 400px;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.valid{
+    color: #f02849;
+    margin-top: 0;
+}
+
+.exitLogin{
+    color:green;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.input-login{
+    height: 35px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.button-send, .input{
+    height: 35px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.button-send{
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #1d448e;
+    border: 1px solid #1d448e;
+    color:white;
+    border: none;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.button-send:hover{
+    background-color: #0056bf;
+    border: 1px solid #0056bf;
+}
+
+.option-login{
+    text-align: center;
+}
+
+.open-modal{
+    width: fit-content;
+    margin: 1rem auto;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-device-width: 1025px) {
+    .info-login{
+        border: 1px solid #ccc;
+    }
+
+    .input-login{
+        font-size: 18px;
+    }
+}
+
+
+@media screen and (max-device-width: 668px){
+    h2{
+        font-size: 25px;
+    }
+
+    .info-login{
+        margin-top: 0;
+        border: 0;
+       
+    }
+
+    .title-login {
+        margin-bottom: 1rem;
+    }
+
+    .input-login{
+        font-size: 14px;
+    }
+
+}
