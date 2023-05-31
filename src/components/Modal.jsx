@@ -1,12 +1,17 @@
 import { useState } from 'react';
 import '../styles/Modal.css'
+import { useNavigate } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 export const Modal = ({ isOpen, onClose}) => {
 
+  const navigate = useNavigate();
+
+  const listUsers = JSON.parse(localStorage.getItem('listUsers'));
+
   const [newUser, setNewUser] = useState({
     name: null,
-    email: null,
+    user: null,
     phone: null,
     password: null,
     confirmedPassword: null,
@@ -21,25 +26,31 @@ export const Modal = ({ isOpen, onClose}) => {
 
   const crearUsuario = (e) => {
     e.preventDefault();
-    const {name, email, phone, password, confirmedPassword} = newUser;
-    if ( !name || !email || !phone || !password || !confirmedPassword ) {
+    const {name, user, phone, password, confirmedPassword} = newUser;
+    if ( !name || !user || !phone || !password || !confirmedPassword ) {
       alert('Todos los campos son obligatorios.');
       return
     }
-    localStorage.setItem('user', JSON.stringify(newUser));
-    localStorage.setItem('token', JSON.stringify({email: newUser.email}));
+    if (password !== confirmedPassword) {
+      alert('Las contraseñas no coinciden.')
+      return
+    }
+    listUsers.push(newUser)
+    localStorage.setItem('listUsers', JSON.stringify(listUsers));
+    localStorage.setItem('token', JSON.stringify({email: newUser.user}));
     clearForm();
     onClose();
+    navigate('/bit02spa/main-study')
     alert('Usuario Creado Satisfactoriamente.');
   }
 
   const clearForm = () => {
     setNewUser({
-      name: null,
-      email: null,
-      phone: null,
-      password: null,
-      confirmedPassword: null,
+      name: '',
+      user: '',
+      phone: '',
+      password: '',
+      confirmedPassword: '',
     })
   }
 
@@ -55,7 +66,7 @@ export const Modal = ({ isOpen, onClose}) => {
                 <input onChange={completeForm} type="text" id="name" name="name" placeholder="Ingresa tu nombre completo" required className="input-modal" />
         
                 <label htmlFor="email"></label>
-                <input onChange={completeForm} type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required className="input-modal" />
+                <input onChange={completeForm} type="email" id="email" name="user" placeholder="Ingresa tu correo electrónico" required className="input-modal" />
         
                 <label htmlFor="phone"></label>
                 <input onChange={completeForm} type="tel" id="phone" name="phone" placeholder="Ingresa tu número de teléfono" className="input-modal" />
