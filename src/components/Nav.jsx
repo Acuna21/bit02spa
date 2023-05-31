@@ -1,12 +1,14 @@
 import { useState } from "react";
 import '../styles/Nav.css'
 import logo2 from '../assets/logo2.png'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Modal } from "./Modal";
 
 export const Nav = () => {
 
+    const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
+    const token = localStorage.getItem('token');
 
     const openModal = () => {
         setIsOpen(true);
@@ -22,6 +24,11 @@ export const Nav = () => {
     const handleSearch = (e) => {
         e.preventDefault();
         setSearch(e.target.value);
+    }
+
+    const logOut = () => {
+        localStorage.removeItem('token');
+        navigate('/bit02spa')
     }
 
   return (
@@ -45,13 +52,29 @@ export const Nav = () => {
                     <Link to={baseUrl+"/aprender"}className="aprender" >Aprender</Link>
                 </li>
 
-                <li className="nav-option">
-                    <Link to={baseUrl+"/login"} className="login">Acceder</Link>
-                </li>
+                {token && (
+                <>
+                    <li className="nav-option">
+                        <Link to={baseUrl+"/main-study"}className="aprender" >Estudios</Link>
+                    </li>
+                    <li className="nav-option">
+                        <span onClick={logOut}  className="login">LogOut</span>
+                    </li>
+                </>
+                )}
 
-                <li className="nav-option">
-                    <span onClick={openModal} className="create-account a-redi">Crear cuenta</span>
-                </li>
+                {!token && (
+                <>
+                    <li className="nav-option">
+                        <Link to={baseUrl+"/login"} className="login">Acceder</Link>
+                    </li>
+    
+                    <li className="nav-option">
+                        <span onClick={openModal} className="create-account a-redi">Crear cuenta</span>
+                    </li>
+                </>
+                )}
+
             </ul>
         </div>
         <Modal isOpen={isOpen} onClose={closeModal} />

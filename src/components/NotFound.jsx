@@ -1,6 +1,7 @@
+import { Navigate } from 'react-router-dom'
 import '../styles/NotFound.css'
 export const NotFound = () => {
   return (
-    <div className='container' >Page Not Found</div>
+    <Navigate to={'/bit02spa'} />
   )
 }
