@@ -1,0 +1,109 @@
+.redirect{
+    text-decoration: none;
+    color: #031b4e;
+}
+
+.text-color{
+    color: #031b4e;
+}
+
+/* linea de bajo general */
+.defect:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.recover-account{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-account{
+    font-style: italic;
+    font-size: 30px;
+    color: #031b4e;
+}
+
+.information{
+    border: 1px solid #ccc;
+    padding: 2rem;
+    width: 40%;
+    min-width: 500px;
+    margin-bottom: 3rem;
+}
+
+.title-secundary{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    border-bottom: 1px solid #ccc;
+}
+
+.descrip-required{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: 18px;
+    justify-content: center;
+}
+
+.form-recover-account{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 1px solid #ccc;
+}
+
+.form-recover-account input{
+    width: 210px;
+    border-radius: 4px;
+    border: 1px solid #031b4e;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+.form-recover-account:focus {
+    outline: none;
+}
+
+.button-send, .button-create{
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #1d448e;;
+    color:white;
+    border: none;
+    font-weight: bold;
+}
+
+.button-send.button-create:hover{
+    background-color: #0056bf;
+    border: 1px solid #0056bf;
+}
+
+.new-link{
+    margin-bottom: 10px;
+    width: 220px;
+}
+
+.option-login{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gologin, .gocreate-account{
+    border:none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+@media screen and (max-device-width: 668px) {
+    .information{
+        min-width: 300px;
+    }
+}
