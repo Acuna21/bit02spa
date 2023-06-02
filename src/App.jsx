@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Footer, Learn, Login, MainStudy, Nav, NotFound, PrivateRoute, RecoverAccount } from './components'
 import { Home } from './components/Home'
 import './App.css'
+import { DeleteAccount } from './components/DeleteAccount';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path={baseUrl+'aprender'} element={<Learn />}></Route>
         <Route element={<PrivateRoute />}>
           <Route path={baseUrl+'main-study'} element={<MainStudy />} />
+          <Route path={baseUrl+'delete-account'} element={<DeleteAccount />} />
         </Route>
         <Route path={baseUrl+'login'} element={<Login />}></Route>
         <Route path={baseUrl+'recover-account'} element={<RecoverAccount />}></Route>

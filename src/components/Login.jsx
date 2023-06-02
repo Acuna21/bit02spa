@@ -84,7 +84,7 @@ export const Login = () => {
         </form>
 
         <div className="option-login">
-            <span className="text-color defect"><a href="recover-account.html" className="text-color">¿Olvidaste tu contraseña?</a></span>
+            <span className="text-color defect"><a href="recover-account" className="text-color">¿Olvidaste tu contraseña?</a></span>
 
             <p className="open-modal text-color" onClick={openModal}> 
                 ¿No tienes una cuenta? <strong>Registrate</strong>

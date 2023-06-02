@@ -84,7 +84,7 @@ export const RecoverAccount = () => {
                         <input type="submit" value="Aceptar" onClick={accept} className="button-send new-link" />
                     </form>
         
-                    <div className="option-login">
+                    <div className="option-login-recover">
 
                         <button className="gocreate-account text-color defect" onClick={openModal}><strong><span className='redirect'>Crear cuenta</span></strong></button>
         

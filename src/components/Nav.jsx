@@ -3,10 +3,12 @@ import '../styles/Nav.css'
 import logo2 from '../assets/logo2.png'
 import { Link, useNavigate } from "react-router-dom";
 import { Modal } from "./Modal";
+import { Dropdown } from "./Dropdown";
 
 export const Nav = () => {
 
     const navigate = useNavigate();
+
     const [isOpen, setIsOpen] = useState(false);
     const token = localStorage.getItem('token');
 
@@ -24,11 +26,6 @@ export const Nav = () => {
     const handleSearch = (e) => {
         e.preventDefault();
         setSearch(e.target.value);
-    }
-
-    const logOut = () => {
-        localStorage.removeItem('token');
-        navigate('/bit02spa')
     }
 
   return (
@@ -57,8 +54,8 @@ export const Nav = () => {
                     <li className="nav-option">
                         <Link to={baseUrl+"/main-study"}className="aprender" >Estudios</Link>
                     </li>
-                    <li className="nav-option">
-                        <span onClick={logOut}  className="login">LogOut</span>
+                    <li>
+                        <Dropdown navigate={navigate} />
                     </li>
                 </>
                 )}
