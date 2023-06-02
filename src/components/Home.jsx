@@ -6,7 +6,7 @@ export const Home = () => {
     <main>
         <div className="home-info">
             <h1> Aprender es vivir</h1>
-            <p className="about-us">LearnYOUP es una incorporación de educación virtual dedicada a compartir el conocimiento en todo el mundo. Lo ideal es que aquí tengas una guía para aprender lo que quieras en todos las temáticas que necesites.</p>
+            <p className="about-us">LearnYOUP es una corporación de educación virtual dedicada a compartir el conocimiento en todo el mundo. Lo ideal es que aquí tengas una guía para aprender lo que quieras en todos las temáticas que necesites.</p>
         
             <img src={logoi} />
         </div>

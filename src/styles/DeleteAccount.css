@@ -1,0 +1,76 @@
+.redirect{
+    text-decoration: none;
+    color: #031b4e;
+}
+
+.text-color{
+    color: #031b4e;
+}
+
+/* linea de bajo general */
+.defect:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.recover-account{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-account{
+    font-style: italic;
+    font-size: 30px;
+    color: #031b4e;
+}
+
+.information{
+    border: 1px solid #ccc;
+    padding: 2rem;
+    width: 40%;
+    min-width: 500px;
+    margin-bottom: 3rem;
+}
+
+.title-secundary{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    border-bottom: 1px solid #ccc;
+}
+
+.descrip-required{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: 18px;
+    justify-content: center;
+}
+
+.button-send{
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #1d448e;;
+    color:white;
+    border: none;
+    font-weight: bold;
+}
+
+.button-send:hover{
+    background-color: #0056bf;
+    border: 1px solid #0056bf;
+}
+
+.new-link{
+    margin-bottom: 10px;
+    width: 220px;
+}
+
+@media screen and (max-device-width: 668px) {
+    .information{
+        min-width: 300px;
+    }
+}
